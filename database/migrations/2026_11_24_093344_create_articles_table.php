@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-	    $table->string('title');
+            $table->string('title');
             $table->string('summary');
             $table->text('body');
             $table->timestamp('published_at')->nullable();
-	    $table->string('permalink')->unique();
-	    $table->string('status')->default('draft');
+            $table->string('permalink')->unique();
+            $table->string('status')->default('draft');
             $table->string('thumbnail_url')->nullable();
             $table->foreignId('category_id')
-                  ->constrained()
-                  ->cascadeOnDelete();
-	    $table->timestamps();
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 

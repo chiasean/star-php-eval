@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Article;
-use Illuminate\View\View;
 use Illuminate\Http\JsonResponse;
+use Illuminate\View\View;
 
 class ArticleController extends Controller
 {
-     // Display article list
+    // Display article list
     public function index(): View
     {
         $articles = Article::with('category')
